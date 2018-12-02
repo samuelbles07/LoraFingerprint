@@ -51,15 +51,15 @@ class MainApp(MyGui, MyDb):
                 print("New data")
                 datenow = datetime.datetime.now().strftime("%H:%M %d-%m-%y")
 
-                if self.lastMode == KEHADIRAN
+                if self.lastMode == KEHADIRAN:
                     name = self.mydb.save_match_data([self.lastId, self.lastSenderId, datenow])
-                    self.mygui.insert_new_data([self.lastId, "", datenow, self.lastSenderId])
+                    self.mygui.insert_new_data([self.lastId, name, datenow, self.lastSenderId])
 
                 elif self.lastMode == MENDAFTAR:
                     # self.mydb.save_enroll_data([self.lastId, None, datenow])
                     self.mygui.avail_enroll_data.append([self.lastId, "", datenow])
 
-                else
+                else:
                     self.mydb.delete_data(self.lastId)
 
             if self.mygui.ready_to_save is True:

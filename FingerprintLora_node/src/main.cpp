@@ -198,7 +198,8 @@ int search_database(uint16_t &fid) {
                 Serial.println("Unknown error");
                 break;
         }
-        yield();
+        // yield();
+        delay(100);
     }
 
     /* convert it */
@@ -346,7 +347,8 @@ int16_t enroll_finger(int16_t fid) {
                 Serial.println("Unknown error");
                 break;
         }
-        yield();
+        // yield();
+        delay(100);
     }
     // OK success!
 
@@ -385,7 +387,8 @@ int16_t enroll_finger(int16_t fid) {
     p = 0;
     while (p != FPM_NOFINGER) {
         p = finger.getImage();
-        yield();
+        // yield();
+        delay(100);
     }
 
     p = -1;
@@ -417,7 +420,8 @@ int16_t enroll_finger(int16_t fid) {
                 Serial.println("Unknown error");
                 break;
         }
-        yield();
+        // yield();
+        delay(100);
     }
 
     // OK success!
