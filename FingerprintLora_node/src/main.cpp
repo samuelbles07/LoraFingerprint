@@ -517,7 +517,7 @@ void enrollMode(){
             String str = "ID: " + String(fid);
             customDisplay(str, 1);
             sx.SendMsg(MODE_ENROLL, fid);
-            delay(2000);
+            delay(5000);
         } else {
             customDisplay("Failed enroll", 0);
             delay(2000);

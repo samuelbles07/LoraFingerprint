@@ -361,15 +361,15 @@ RET_STATUS SX1508::SendMsg(uint8_t mode, uint8_t id)
 #ifdef GATEWAY
   uint8_t SendBuf[4] = { DEVICE_B_ADDR_H, DEVICE_B_ADDR_L, 0x17, random(0x00, 0x80)};
 #else
-  uint8_t SendBuf[5] = { DEVICE_A_ADDR_H, DEVICE_A_ADDR_L, 0x17, mode, id};
+  uint8_t SendBuf[6] = { DEVICE_A_ADDR_H, DEVICE_A_ADDR_L, 0x17, DEV_ID, mode, id};
 #endif
 
   Serial.println("Sending data");
-  for (int i = 0;i < 5; i++){
+  for (int i = 0;i < 6; i++){
     Serial.print(SendBuf[i]); Serial.print(",");
   }
   Serial.println();
-  sxserial.write(SendBuf, 5);
+  sxserial.write(SendBuf, 6);
 
   return STATUS;
 }
